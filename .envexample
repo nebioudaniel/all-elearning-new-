@@ -1,0 +1,27 @@
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_ZHJpdmluZy1kdWNrbGluZy03Mi5jbGVyay5hY2NvdW50cy5kZXYk
+CLERK_SECRET_KEY=sk_test_YFrb10yTzse47f3RzZRRUBPeKKdQ2nB1BjhRgVGbro
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/home1
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/home1
+#
+DATABASE_URL='mysql://avnadmin:AVNS_TnqbeiKgy6tjboR9J_P@mysql-1fbe39ec-netsuberhune-77ca.a.aivencloud.com:24417/defaultdb?ssl-mode=REQUIRED'
+#
+# This was inserted by `prisma init`:
+# Environment variables declared in this file are automatically made available to Prisma.
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+#/ibm/
+UPLOADTHING_SECRET=sk_live_9d06de94160d23d9a68feb945c6a60fdde6dca66ebb0c274b84830bb610cb9ba
+UPLOADTHING_APP_ID=f8y13pj0ye
+#fix this Mux_TOKWN-ID AND MUX_TOKEN_SECURATE Must be up grade or changed with other simpilar plaftrom By nebiou daniel 
+MUX_TOKEN_ID=f0ac2220-7f65-4dfc-a552-147915041d9f
+MUX_TOKEN_SECRET=IEjRTJhLUtnKKtOS5uSQRryRogInCFDx4j4ldNQjOm9/uvf36DMaTtaN+OdSFU+x8SL0lMeXI13
+# Try to change it with the paying platformsthat are in the ethiopian like Chapa and Ariif payments Methods
+STRIPE_API_KEY=sk_test_51OgW0WKdqQXj7oaM5bUGCsglJe59TC8miymtdo1xmk3SXHAg2vJezIJo0RDQndsdfY2nEQc8VR66fr3iaQS6WCcY00j8TJf8Lj
+NEXT_PUBLIC_APP_URL=http://localhost:3001
+STRIPE_WEBHOOK_SECRET=whsec_ea0b5ffe0572beefde057cfc0f485aa16a1f4b3ac2275bb18372195541668e3d
+# this Uesr veffication is using Clerk must be changd to ower own paymethod systeem
+NEXT_PUBLIC_TEACHER_ID=user_2WlfwMIaxnLuXhcceErHLLjBn0H
