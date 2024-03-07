@@ -15,6 +15,10 @@ export async function POST(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
+    if (!url) {
+      return new NextResponse("Attachment URL is missing", { status: 400 });
+    }
+
     const courseOwner = await db.course.findUnique({
       where: {
         id: params.courseId,
@@ -24,6 +28,12 @@ export async function POST(
 
     if (!courseOwner) {
       return new NextResponse("Unauthorized", { status: 401 });
+    }
+
+    // Add validation for URL format
+    const validUrlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+    if (!validUrlRegex.test(url)) {
+      return new NextResponse("Invalid attachment URL format", { status: 400 });
     }
 
     const attachment = await db.attachment.create({
@@ -36,7 +46,7 @@ export async function POST(
 
     return NextResponse.json(attachment);
   } catch (error) {
-    console.log("COURSE_ID_ATTACHMENTS", error);
+    console.error("COURSE_ID_ATTACHMENTS", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
