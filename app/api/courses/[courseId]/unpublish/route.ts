@@ -22,7 +22,11 @@ export async function PATCH(
     });
 
     if (!course) {
-      return new NextResponse("Not found", { status: 404 });
+      return new NextResponse("Course not found or unauthorized", { status: 404 });
+    }
+
+    if (!course.isPublished) {
+      return new NextResponse("Course is already unpublished", { status: 400 });
     }
 
     const unpublishedCourse = await db.course.update({
@@ -37,7 +41,7 @@ export async function PATCH(
 
     return NextResponse.json(unpublishedCourse);
   } catch (error) {
-    console.log("[COURSE_ID_UNPUBLISH]", error);
+    console.error("[COURSE_ID_UNPUBLISH] Error:", error);
     return new NextResponse("Internal Error", { status: 500 });
   } 
 }
