@@ -40,6 +40,10 @@ export async function POST(
       return new NextResponse("Not found", { status: 404 });
     }
 
+    if (!course.price || isNaN(course.price)) {
+      return new NextResponse("Invalid course price", { status: 400 });
+    }
+
     const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = [
       {
         quantity: 1,
@@ -49,7 +53,7 @@ export async function POST(
             name: course.title,
             description: course.description!,
           },
-          unit_amount: Math.round(course.price! * 100),
+          unit_amount: Math.round(course.price * 100),
         }
       }
     ];
@@ -90,7 +94,7 @@ export async function POST(
 
     return NextResponse.json({ url: session.url });
   } catch (error) {
-    console.log("[COURSE_ID_CHECKOUT]", error);
+    console.error("[COURSE_ID_CHECKOUT] Error:", error);
     return new NextResponse("Internal Error", { status: 500 })
   }
 }
