@@ -11,3 +11,4 @@ export const useConfettiStore = create<ConfettiStore>((set) => ({
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
+// adding simple code for make it be usable and such functionality
